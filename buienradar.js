@@ -1,3 +1,10 @@
+/*
+buienradar.js v1.0.0 (https://www.github.com/jxpsert/buienradar.js)
+created by jxpsert (https://www.jasperp.nl)
+
+MIT License
+API owned by Buienradar / RTL (https://www.buienradar.nl)
+*/
 const fetch = require('node-fetch');
 const API_URL = "https://data.buienradar.nl/2.0/feed/json";
 const version = "1.0.0";
