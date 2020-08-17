@@ -9,7 +9,6 @@ async function getStationId(locationName){
     let res = await fetch(API_URL);
     let jsonResponse = await res.json();
     jsonResponse.actual.stationmeasurements.forEach(s =>{
-      // console.log(s.regio.toLowerCase() + " " + locationName.toLowerCase());
             if(s.regio.toLowerCase() === locationName.toLowerCase()){
                 locationId = s.stationid;
             }
