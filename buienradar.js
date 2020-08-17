@@ -1,17 +1,17 @@
-const apiFunctions = {};
 const fetch = require('node-fetch');
 const API_URL = "https://data.buienradar.nl/2.0/feed/json";
 const version = "1.0.0";
+const copyright = "(C)opyright Buienradar / RTL. Alle rechten voorbehouden";
+const terms = "Deze feed mag vrij worden gebruikt onder voorwaarde van bronvermelding buienradar.nl inclusief een hyperlink naar https://www.buienradar.nl. Aan de feed kunnen door gebruikers of andere personen geen rechten worden ontleend.";
 
 async function getStationId(locationName){
     let locationId = 0;
     let res = await fetch(API_URL);
     let jsonResponse = await res.json();
     jsonResponse.actual.stationmeasurements.forEach(s =>{
-            if(s.regio.toLowerCase() == locationName.toLowerCase()){
+      // console.log(s.regio.toLowerCase() + " " + locationName.toLowerCase());
+            if(s.regio.toLowerCase() === locationName.toLowerCase()){
                 locationId = s.stationid;
-            }else{
-                throw new Error("Cannot find station with name " + locationName);
             }
         })
         return locationId;
@@ -48,8 +48,6 @@ async function getStation(stationId){
                      "rainfallLast": [s.rainFallLastHour, s.rainFallLast24Hour],
                      "time": s.timestamp
                  }
-             }else{
-                 throw new Error("Cannot find station with ID " + stationId);
              }
          })
          return stationInfo;
@@ -68,6 +66,7 @@ async function getForecast(){
         "author": data.author,
         "authorbio": data.authorbio
     }
+    return forecast;
 }
 
 async function fiveDayForecast(){
@@ -88,6 +87,8 @@ async function fiveDayForecast(){
 
 module.exports = {
     version,
+    copyright,
+    terms,
     stations,
     getStationId,
     getStation,
