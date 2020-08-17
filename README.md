@@ -1,2 +1,2 @@
 # buienradar.js
-A wrapper for the Buienradar API
+A Node.JS wrapper for the Buienradar API.
