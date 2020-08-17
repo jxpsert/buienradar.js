@@ -4,6 +4,9 @@ A Node.JS wrapper for the Buienradar API.
 ### Dependencies
 node-fetch
 
+### Documentation
+https://github.com/jxpsert/buienradar.js/wiki
+
 ### Installation
 Just put the buienradar.js file in your project directory, and require() it when needed.
 
