@@ -42,7 +42,7 @@ async function getStation(stationId){
                      "temperature": s.temperature,
                      "feelTemperature":s.feeltemperature,
                      "winddirection": s.winddirection,
-                     "windspeed": s.windspeed,
+                     "windspeed": s.windspeedBft * 4,
                      "icon": s.iconurl,
                      "rainfall": s.precipitation,
                      "rainfallLast": [s.rainFallLastHour, s.rainFallLast24Hour],
