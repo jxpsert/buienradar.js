@@ -1,8 +1,5 @@
 /*
 buienradar.js v1.0.0 (https://www.github.com/jxpsert/buienradar.js)
-created by jxpsert (https://www.jasperp.nl)
-
-MIT License
 API owned by Buienradar / RTL (https://www.buienradar.nl)
 */
 const fetch = require('node-fetch');
